@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fandystoretestweb</groupId>
+  <artifactId>index</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>Fandy Store Test Web</name>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>17</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+  <dependencies>
+  <dependency>
+    <groupId>com.github.vidstige</groupId>
+    <artifactId>jadb</artifactId>
+    <version>v1.2.1</version>
+</dependency>
+  <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>4.0.1</version>
+	    <scope>provided</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+	<dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>jsp-api</artifactId>
+	    <version>2.2</version>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-java</artifactId>
+	    <version>4.6.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+	<dependency>
+	    <groupId>io.appium</groupId>
+	    <artifactId>java-client</artifactId>
+	    <version>8.2.0</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>2.0.3</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+	<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>2.0.3</version>
+    <scope>test</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.itextpdf/kernel -->
+	<!-- always needed -->     
+      <dependency>         
+         <groupId>com.itextpdf</groupId>         
+         <artifactId>kernel</artifactId>         
+         <version>7.0.2</version>     
+      </dependency>  
+      
+      <dependency>         
+         <groupId>com.itextpdf</groupId>         
+         <artifactId>io</artifactId>         
+         <version>7.0.2</version>     
+      </dependency>  
+      
+      <dependency>         
+         <groupId>com.itextpdf</groupId>         
+         <artifactId>layout</artifactId>         
+         <version>7.0.2</version>
+      </dependency>  
+      
+      <dependency>         
+         <groupId>com.itextpdf</groupId>         
+         <artifactId>forms</artifactId>         
+         <version>7.0.2</version>    
+      </dependency>  
+      
+      <dependency>         
+         <groupId>com.itextpdf</groupId>         
+         <artifactId>pdfa</artifactId>         
+         <version>7.0.2</version>     
+      </dependency>  
+      
+      <dependency>         
+         <groupId>com.itextpdf</groupId>         
+         <artifactId>sign</artifactId>         
+         <version>7.0.2</version>     
+      </dependency>  
+      
+      <dependency>         
+         <groupId>com.itextpdf</groupId>         
+         <artifactId>barcodes</artifactId>         
+         <version>7.0.2</version>     
+      </dependency>  
+      
+      <dependency>         
+         <groupId>com.itextpdf</groupId>         
+         <artifactId>font-asian</artifactId>         
+         <version>7.0.2</version>     
+      </dependency>  
+      
+      <dependency>         
+         <groupId>com.itextpdf</groupId>         
+         <artifactId>hyph</artifactId>         
+         <version>7.0.2</version>    
+      </dependency> 
+  </dependencies>
+</project>
