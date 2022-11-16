@@ -1,6 +1,7 @@
 package fandystoretestweb;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -8,6 +9,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -24,6 +26,9 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.Setting;
 import io.appium.java_client.android.AndroidDriver;
+import se.vidstige.jadb.JadbConnection;
+import se.vidstige.jadb.JadbDevice;
+import se.vidstige.jadb.JadbException;
 
 public class FandyStoreTest {
 
@@ -34,7 +39,7 @@ public class FandyStoreTest {
 
 	        public void run() {
 	            try {
-	            	openFandyStore("3268fe3c","OPPO A95","24 - 1.0.2");	
+	            	openFandyStore("3268fe3c","OPPO A95","24 - 1.0.2");
 	            }catch(Exception e) {
 	            	
 	            	
@@ -46,7 +51,7 @@ public class FandyStoreTest {
 	        public void run() {
 	            try {
 	    			openFandyStore("d5346ea1","Xiaomi Mi 6","24 - 1.0.2");
-	            }catch(Exception e) {
+	    		}catch(Exception e) {
 	            	
 	            }
 	        }
@@ -56,7 +61,7 @@ public class FandyStoreTest {
 	        public void run() {
 	            try {
 	    			openFandyStore("emulator-5554","Nexus 5","24 - 1.0.2");
-	            }catch(Exception e) {
+	    		 }catch(Exception e) {
 	            	
 	            }
 	        }
@@ -65,8 +70,15 @@ public class FandyStoreTest {
 		t1.start();
 		t2.start();
 		t3.start();
-		
-		return "Loading";
+		try {             
+	       t1.join();     
+	       t2.join();     
+	       t3.join(); 
+	    } catch (InterruptedException e) {
+	       e.printStackTrace();
+	    }
+
+		return "successfully testing";
 	}
 	
 	
@@ -87,12 +99,12 @@ public class FandyStoreTest {
 		try {
 			driver = new AppiumDriver(
 				    // The default URL in Appium 1 is http://127.0.0.1:4723/wd/hub
-				    new URL("https://6093-158-140-176-15.ap.ngrok.io/wd/hub"), cap
+				    new URL("http://127.0.0.1:4723/wd/hub"), cap
 				);
 			try {
-				Files.createDirectories(Paths.get("/Users/fajarmuhf/Laporan Fandy Store Testing/"+tipe));
+				Files.createDirectories(Paths.get("C:/Users/Fajar/Laporan Fandy Store Testing/"+tipe));
 		    	// Creating a PdfDocument object   
-		        String dest1 = "/Users/fajarmuhf/Laporan Fandy Store Testing/"+tipe+"/laporan test - "+version+".pdf";   
+		        String dest1 = "C:/Users/Fajar/Laporan Fandy Store Testing/"+tipe+"/laporan test - "+version+".pdf";   
 		        PdfWriter writer = new PdfWriter(dest1);       
 		           
 		        // Creating a PdfDocument object      
